@@ -23,6 +23,38 @@ def adj_mat_to_df(adj_df, column_list):
   df = pd.DataFrame(edge_list, columns=column_list)
   return df
 
+
+# Input: File File which consist of standard user graph input
+# Output: Return the edge list from the standard input
+def get_edgelist_from_graph(fileName):
+  f = open(fileName, "r")
+  edge_list = []
+  for line in f.readlines():
+      node_list = line.strip().split('->')
+      from_node = node_list[0]
+      to_node_list = node_list[1].strip().split(',');
+      for node in to_node_list:
+        edge_list.append([int(from_node), int(node)])
+
+  return edge_list
+
+
+# Input : File which consist of standard user graph input and is zero indexed or not
+# Output: Return an adjacency matrix of the user input's graph
+# User's standard graph format  : Node1 -> node2, node3, node4
+
+def get_adj_mat(fileName, zero_indexed):
+  edge_list = get_edgelist_from_graph(fileName)
+  if not zero_indexed:
+    edge_list = [[x - 1 for x in edge] for edge in edge_list]
+
+  size = len(set([n for e in edge_list for n in e])) 
+  adjacency = [[0]*size for _ in range(size)]
+  for sink, source in edge_list:
+      adjacency[sink][source] += 1
+      
+  return adjacency
+
 ## TESTING
 
 df = pd.DataFrame([["A", "B"], ["C", "A"], ["B", "D"], ["Z", "B"], ["A", "C"] , ["A", "D"],  ["A", "D"]],
