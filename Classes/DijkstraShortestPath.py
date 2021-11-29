@@ -6,7 +6,7 @@ import numpy as np
 # the set of vertices still in node_list
 def min_distance(dist,node_list):
     minimum = float("Inf")
-    min_index = -1
+    min_index = 1
     for i in range(len(dist)):
         if dist[i] < minimum and i in node_list:
             minimum = dist[i]
@@ -17,7 +17,7 @@ def min_distance(dist,node_list):
 # Function to print shortest path from source to j using parent array
 def get_path(parent, j):
     path = []
-    while(parent[j] != -1):
+    while(parent[j] != 1):
       path.append(j)
       j = parent[j]
     path.append(j)
