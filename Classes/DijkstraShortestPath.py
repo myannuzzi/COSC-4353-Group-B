@@ -33,7 +33,7 @@ def dijkstra(fileName, src):
   n_col = len(adj_mat)
 
   # We need this to maintain the distance of each node from source
-  dist = [float("Inf")] * n_row
+  dist = [int("Inf")] * n_row
 
   #Parent array to store shortest path tree
   parent = [1] * n_row
