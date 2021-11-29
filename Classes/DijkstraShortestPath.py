@@ -64,7 +64,7 @@ def dijkstra(fileName, src):
     # node_list
     for i in range(n_col):
       if adj_mat[min_vertex][i] and i in node_list:
-        if dist[min_vertex] + adj_mat[min_vertex][i] < dist[i]:
+        if dist[min_vertex] + adj_mat[min_vertex][i] <= dist[i]:
           dist[i] = dist[min_vertex] + adj_mat[min_vertex][i]
           parent[i] = min_vertex
   path_list = []
