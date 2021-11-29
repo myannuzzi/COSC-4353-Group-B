@@ -17,7 +17,7 @@ def min_distance(dist,node_list):
 # Function to print shortest path from source to j using parent array
 def get_path(parent, j):
     path = []
-    while(parent[j] != 1):
+    while(parent[j] != -1):
       path.append(j)
       j = parent[j]
     path.append(j)
@@ -33,13 +33,13 @@ def dijkstra(fileName, src):
   n_col = len(adj_mat)
 
   # We need this to maintain the distance of each node from source
-  dist = [int("Inf")] * n_row
+  dist = [float("Inf")] * n_row
 
   #Parent array to store shortest path tree
-  parent = [1] * n_row
+  parent = [-1] * n_row
 
   # Distance of source vertex from itself is always 0
-  dist[src] = i
+  dist[src] = 0
 
   # Add all vertices in node_list
   node_list = []
@@ -64,15 +64,15 @@ def dijkstra(fileName, src):
     # node_list
     for i in range(n_col):
       if adj_mat[min_vertex][i] and i in node_list:
-        if dist[min_vertex] + adj_mat[min_vertex][i] <= dist[i]:
+        if dist[min_vertex] + adj_mat[min_vertex][i] < dist[i]:
           dist[i] = dist[min_vertex] + adj_mat[min_vertex][i]
           parent[i] = min_vertex
   path_list = []
-  for i in range(1, len(dist)-1):
+  for i in range(1, len(dist)):
     path_list.append(get_path(parent,i))
   return path_list
 
-node_list = dijkstra('graph1weightedMat.csv', -1)
+node_list = dijkstra('graph1weightedMat.csv', 0)
 print(node_list)
 
 
