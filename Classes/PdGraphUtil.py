@@ -59,6 +59,13 @@ def get_adj_mat(fileName, zero_indexed):
 # Convert Numpy adj matrix to csv (downloadable file)
 def adj_mat_to_csv(adj_mat, path=""):
   np.savetxt(path + "adjMatrix.csv", adj_mat, delimiter=",", fmt='%i')
+  
+  
+# Converting graph.csv files to numpy adj matrix 
+def csv_to_numpy_adjmat(fileName):
+  adj_mat = np.genfromtxt(fileName, delimiter=',')
+  return  np.array(adj_mat, dtype=np.int)
+
 
 ## TESTING
 
