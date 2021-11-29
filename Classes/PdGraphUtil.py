@@ -56,6 +56,10 @@ def get_adj_mat(fileName, zero_indexed):
       
   return np.array(adjacency)
 
+# Convert Numpy adj matrix to csv (downloadable file)
+def adj_mat_to_csv(adj_mat, path=""):
+  np.savetxt(path + "adjMatrix.csv", adj_mat, delimiter=",", fmt='%i')
+
 ## TESTING
 
 df = pd.DataFrame([["A", "B"], ["C", "A"], ["B", "D"], ["Z", "B"], ["A", "C"] , ["A", "D"],  ["A", "D"]],
