@@ -62,7 +62,7 @@ def dijkstra(fileName, src):
     # the picked vertex. Consider only
     # those vertices which are still in
     # node_list
-    '''for i in range(n_col):
+    for i in range(n_col):
       if adj_mat[min_vertex][i] and i in node_list:
         if dist[min_vertex] + adj_mat[min_vertex][i] < dist[i]:
           dist[i] = dist[min_vertex] + adj_mat[min_vertex][i]
@@ -73,7 +73,7 @@ def dijkstra(fileName, src):
   return path_list
 
 node_list = dijkstra('graph1weightedMat.csv', 0)
-print(node_list)'''
+#print(node_list)
 
 
 def print_min_path(node_list):
