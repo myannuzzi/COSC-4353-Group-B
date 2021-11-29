@@ -62,9 +62,9 @@ def adj_mat_to_csv(adj_mat, path=""):
   
   
 # Converting graph.csv files to numpy adj matrix 
-'''def csv_to_numpy_adjmat(fileName):
+def csv_to_numpy_adjmat(fileName):
   adj_mat = np.genfromtxt(fileName, delimiter=',')
-  return  np.array(adj_mat, dtype=np.int)'''
+  return  np.array(adj_mat, dtype=np.int)
 
 
 ## TESTING
@@ -73,7 +73,7 @@ df = pd.DataFrame([["A", "B"], ["C", "A"], ["B", "D"], ["Z", "B"], ["A", "C"] , 
                       columns=["Column1", "Column2"])
 
 # Dataframe
-print("Actual Dataframe")
+#print("Actual Dataframe")
 print(df)
 print("\n")
 
