@@ -9,7 +9,7 @@ def min_distance(dist,node_list):
     min_index = -1
     for i in range(len(dist)):
         if dist[i] <= minimum and i in node_list:
-            minimum = dist[i]
+            minimum = dist[i-1]
             min_index = i
     return min_index
  
