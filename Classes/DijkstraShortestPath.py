@@ -72,7 +72,7 @@ def dijkstra(fileName, src):
     path_list.append(get_path(parent,i))
   return path_list
 
-node_list = dijkstra('graph1weightedMat.csv', 0)
+node_list = dijkstra('graph1weightedMat.csv', -1)
 print(node_list)
 
 
