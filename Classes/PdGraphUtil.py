@@ -82,3 +82,36 @@ df_adj = df_to_adj_matrix(df.Column1, df.Column2)
 print("Adjacency Matrix Dataframe")
 print(df_adj)
 print("\n")
+
+# CHERISH
+
+import numpy as np
+
+def get_edgelist_from_graph(fileName):
+  f = open(fileName, "r")
+  edge_list = []
+  for line in f.readlines():
+      node_list = line.strip().split('->')
+      from_node = node_list[0]
+      to_node_list = node_list[1].strip().split(',');
+      for node in to_node_list:
+        edge_list.append([int(from_node), int(node)])
+
+  return edge_list
+
+# This is the main function which he can use to convert file of any type either the csv or txt to numpy adj matrix
+def get_numpy_adjmat(fileName, zero_indexed = False):
+  if fileName.endswith('csv'):
+    adj_mat = np.genfromtxt(fileName, delimiter=',')
+    return  np.array(adj_mat, dtype=np.int)
+
+  else :
+    edge_list = get_edgelist_from_graph(fileName)
+    if not zero_indexed:
+      edge_list = [[x - 1 for x in edge] for edge in edge_list]
+
+    size = len(set([n for e in edge_list for n in e])) 
+    adjacency = [[0]*size for _ in range(size)]
+    for sink, source in edge_list:
+        adjacency[sink][source] += 1
+    return np.array(adjacency)
