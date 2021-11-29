@@ -39,7 +39,7 @@ def dijkstra(fileName, src):
   parent = [-1] * n_row
 
   # Distance of source vertex from itself is always 0
-  dist[src] = 0
+  dist[src] = i
 
   # Add all vertices in node_list
   node_list = []
