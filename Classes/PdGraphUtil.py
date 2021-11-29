@@ -20,7 +20,7 @@ def adj_mat_to_df(adj_df, column_list):
       while col > 0:
         edge_list.append([index, headers[header_idx]])
         col -= 1
-      header_idx += 1
+      header_idx + 1
   df = pd.DataFrame(edge_list, columns=column_list)
   return df
 
