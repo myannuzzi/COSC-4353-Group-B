@@ -82,6 +82,6 @@ def print_min_path(node_list):
     print("Min path from " + str(path[0]) + " to " + str(path[len_path-1]), end=" ---> ")
     for node in path:
       print(node, end=" ")
-    print("\n")
+    #print("\n")
 
 print_min_path(node_list)
