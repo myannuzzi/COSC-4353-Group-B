@@ -55,7 +55,7 @@ def dijkstra(fileName, src):
     min_vertex = min_distance(dist,node_list)
 
     # remove min element	
-    node_list.remove(min_vertex)
+    #node_list.remove(min_vertex)
 
     # Update dist value and parent
     # index of the adjacent vertices of
