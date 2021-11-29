@@ -77,11 +77,6 @@ df = pd.DataFrame([["A", "B"], ["C", "A"], ["B", "D"], ["Z", "B"], ["A", "C"] , 
 print(df)
 print("\n")
 
-# Converting dataframe to Adjacency Matrix
-df_adj = df_to_adj_matrix(df.Column1, df.Column2)
-print("Adjacency Matrix Dataframe")
-print(df_adj)
-print("\n")
 
 # CHERISH
 
