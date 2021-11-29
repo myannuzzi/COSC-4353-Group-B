@@ -17,7 +17,7 @@ def min_distance(dist,node_list):
 # Function to print shortest path from source to j using parent array
 def get_path(parent, j):
     path = []
-    while(parent[j] != -1):
+    while(parent[j] != 1):
       path.append(j)
       j = parent[j]
     path.append(j)
