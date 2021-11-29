@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # Return adjacency matrix pandas dataframe
 
@@ -40,7 +41,7 @@ def get_edgelist_from_graph(fileName):
 
 
 # Input : File which consist of standard user graph input and is zero indexed or not
-# Output: Return an adjacency matrix of the user input's graph
+# Output: Return an adjacency matrix (numpy) of the user input's graph
 # User's standard graph format  : Node1 -> node2, node3, node4
 
 def get_adj_mat(fileName, zero_indexed):
@@ -53,7 +54,7 @@ def get_adj_mat(fileName, zero_indexed):
   for sink, source in edge_list:
       adjacency[sink][source] += 1
       
-  return adjacency
+  return np.array(adjacency)
 
 ## TESTING
 
