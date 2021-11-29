@@ -68,7 +68,7 @@ def dijkstra(fileName, src):
           dist[i] = dist[min_vertex] + adj_mat[min_vertex][i]
           parent[i] = min_vertex
   path_list = []
-  for i in range(1, len(dist)):
+  for i in range(1, len(dist)-1):
     path_list.append(get_path(parent,i))
   return path_list
 
