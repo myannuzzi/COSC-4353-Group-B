@@ -36,7 +36,7 @@ def dijkstra(fileName, src):
   dist = [float("Inf")] * n_row
 
   #Parent array to store shortest path tree
-  parent = [-1] * n_row
+  parent = [1] * n_row
 
   # Distance of source vertex from itself is always 0
   dist[src] = 0
