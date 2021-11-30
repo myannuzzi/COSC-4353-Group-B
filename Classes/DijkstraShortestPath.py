@@ -62,6 +62,7 @@ def dijkstra(fileName, src):
     # the picked vertex. Consider only
     # those vertices which are still in
     # node_list
+    
     for i in range(n_col):
       if adj_mat[min_vertex][i] and i in node_list:
         if dist[min_vertex] + adj_mat[min_vertex][i] < dist[i]:
