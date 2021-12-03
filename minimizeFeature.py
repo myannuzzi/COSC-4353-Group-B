@@ -1,7 +1,4 @@
 import pandas as pd
-import numpy as np
-import networkx as nx
-import matplotlib.pyplot as plt
 import os
 import file_to_mat
 import sys
@@ -9,7 +6,7 @@ import sys
 INF = 999
 try:
     # number of vertices in graph
-    nodes = int(input("Enter number of nodes: "))
+    nodes = int(input("Enter number of nodes (The limit is 5 as of now to avoid major complexity): "))
     # creating graph by adjacency matrix method
     edges = int(input("Enter number of edges: "))
 except:
@@ -37,7 +34,7 @@ for f1, f2, f3 in os.walk(input_folder):
         inputs_list.append(os.path.join(f1, file))
 
 print(inputs_list)
-given_file = int(input("choose one file from the available inputs as a number starting with 0: "))
+given_file = int(input("choose one file from the available inputs as a number starting with 2: "))
 
 # file_name = ""
 #
@@ -92,6 +89,7 @@ out = []
 edge_out = []
 edge_out2 = []
 weights = []
+
 while edges < nodes - 1:
 
     minimum = INF
@@ -112,7 +110,7 @@ while edges < nodes - 1:
     weights += [str(g[a][b])]
     df2 = pd.DataFrame(out, columns=["Edge", "Weight"])
     # print(df2)
-    # print(out)
+    # print("out", out)
     selected_node[b] = True
     edges += 1
 
@@ -128,30 +126,4 @@ except:
     print("Enter appropriate values for nodes and edges and try again")
     sys.exit(1)
 
-# graph for the dataframe
 
-gr = nx.Graph()
-
-for i in range(len(edge_out)):
-    gr.add_edge(edge_out[i], edge_out2[i], weight=weights[i])
-    # gr[edge_out[i]][edge_out2[i]]['weight'] = weights[i]
-
-# for e in gr.edges():
-#     gr[e[0]][e[1]] = weights[e]
-#
-# nx.set_edge_attributes(gr, values=weights, name='weight')
-
-print(nx.info(gr))
-
-pos = nx.spring_layout(gr, seed=7)
-
-nx.draw_networkx_nodes(gr, pos, node_size=700)
-
-nx.draw_networkx_edges(gr, pos, width=6)
-
-nx.draw_networkx_labels(gr, pos, font_size=20, font_family="sans-serif")
-
-labels = nx.get_edge_attributes(gr, 'weight')
-nx.draw_networkx_edge_labels(gr, pos, font_size=20, edge_labels=labels)
-
-plt.show()

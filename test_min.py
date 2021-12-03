@@ -1,6 +1,7 @@
 import unittest
 import pandas
 import minimizeFeature as mf
+import matplotlib.pyplot
 
 
 class TestMin(unittest.TestCase):
@@ -20,6 +21,11 @@ class TestMin(unittest.TestCase):
 
     def test_df(self):
         self.assertIsInstance(mf.df2, pandas.DataFrame)
+
+    def test_out(self):
+        out = [['0 - 4', '2'], ['4 - 2', '3']]
+        if mf.nodes == 5 and mf.edges == 2 and mf.given_file == 3:
+            self.assertEqual(mf.out, out)
 
 
 # commit to feature branch
