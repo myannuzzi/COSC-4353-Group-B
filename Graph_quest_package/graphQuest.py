@@ -146,12 +146,12 @@ class Graph:
 		newMatrix = self.adjMatrix
 		return newMatrix
 
-	# Output function
-	# Create a csv file
-	def save(self):
-		# Put numpy array into csv file
-		print("Saving file under 'adjmatrix.csv'")
-		np.savetxt('adjMatrix.csv', self.adjMatrix, delimiter=",")
+	# # Output function
+	# # Create a csv file
+	# def save(self):
+	# 	# Put numpy array into csv file
+	# 	print("Saving file under 'adjmatrix.csv'")
+	# 	np.savetxt('adjMatrix.csv', self.adjMatrix, delimiter=",")
 
 
 # Graph Algorithms
