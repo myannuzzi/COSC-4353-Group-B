@@ -42,20 +42,6 @@ class Graph:
 				newMatrix[i][j] = copyMatrix[i][j]
 		# Set new matrix values
 		self.adjMatrix = newMatrix
-		
-	# Insert edge
-	# Inserts edge into graph (needs a source node and destination node, undirected or directed, can be self referencing)
-	def insertEdge(self, a, b):
-		# Check if the edge values are out of place first
-		if((a > self.nodeCount or a < 1) or (b > self.nodeCount or b < 1)):
-			print("Node index out of bounds")
-			return -1
-
-		newMatrix = self.adjMatrix
-		newMatrix[int(a-1),int(b-1)] = 1
-		newMatrix[int(b-1),int(a-1)] = 1
-		print("Edge added between nodes " + str(a) + " and " + str(b))
-		self.adjMatrix = newMatrix
 			
 	# Remove node
 	# Removes node from graph (needs to remove related edges from node that was removed)
@@ -73,6 +59,20 @@ class Graph:
 		newMatrix = np.delete(newMatrix,value,1)
 		# print(newMatrix)
 		print("Deleted node " + str(value))
+		self.adjMatrix = newMatrix
+
+    # Insert edge
+	# Inserts edge into graph (needs a source node and destination node, undirected or directed, can be self referencing)
+	def insertEdge(self, a, b):
+		# Check if the edge values are out of place first
+		if((a > self.nodeCount or a < 1) or (b > self.nodeCount or b < 1)):
+			print("Node index out of bounds")
+			return -1
+
+		newMatrix = self.adjMatrix
+		newMatrix[int(a-1),int(b-1)] = 1
+		newMatrix[int(b-1),int(a-1)] = 1
+		print("Edge added between nodes " + str(a) + " and " + str(b))
 		self.adjMatrix = newMatrix
 
 	# Remove edge
@@ -533,6 +533,6 @@ def csv_to_numpy_adjmat(fileName):
 
 def adj_mat_to_csv(adj_mat, path=""):
     np.savetxt(path + "adjMatrix.csv", adj_mat, delimiter=",", fmt='%i')
+    print("The output will be stored outside the directory in a file called adjMatrix.csv")
 
 
-print("The output will be stored outside the directory in a file called adjMatrix.csv")
