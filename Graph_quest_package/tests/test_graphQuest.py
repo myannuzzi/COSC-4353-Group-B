@@ -53,6 +53,8 @@ class TestGraphQuestPackage(unittest.TestCase):
 
     def test_getEdgeCount(self):
         print("test_getEdgeCount")
+        # Node count for current graph should be 7
+        self.assertEqual(self.test.getEdgeCount(), 7)
         pass
 
     def test_getAdjMatrix(self):
