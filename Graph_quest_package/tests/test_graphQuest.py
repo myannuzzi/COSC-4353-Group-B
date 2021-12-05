@@ -104,6 +104,19 @@ class TestGraphQuestPackage(unittest.TestCase):
 
     def test_removeNode(self):
         print("test_removeNode")
+        # newMatrix = np.array([[0, 1, 1, 1],
+		# 					  [1, 0, 1, 0],
+		# 					  [1, 1, 0, 1],
+		# 					  [1, 0, 1, 0]])
+                            
+        # adjMatrix = np.array([[0, 1, 1, 0, 0],
+        #                       [1, 0, 1, 1, 1],
+        #                       [1, 1, 0, 1, 0],
+        #                       [0, 1, 1, 0, 1],
+        #                       [0, 1, 0, 1, 0]])
+                              
+        # self.test.removeNode(1)
+        # self.assertTrue(np.array_equal(newMatrix, self.test.getAdjMatrix(True)))
         pass
 
     def test_insertEdge(self):
