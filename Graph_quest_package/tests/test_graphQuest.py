@@ -1,11 +1,14 @@
 # Unit test file for graphQuest package
 import unittest
-from testQuest import Graph
+import sys
 import numpy as np
 import os
 
+# Importing from another directory
+sys.path.insert(0,'D:/UH Fall 2021/4353 Software Design/Group project/repo/COSC-4353-Group-B/Graph_quest_package')
+from testQuest import Graph
 
-class TestGraphQuestPackage(unittest.TestProgram):
+class TestGraphQuestPackage(unittest.TestCase):
     # Adding in setup and teardown to reduce code reusage
     def setUp(self):
         print("setup")
@@ -21,16 +24,17 @@ class TestGraphQuestPackage(unittest.TestProgram):
         pass
 
     def test_constructor(self):
-        print("test_constructor")
+        # print("test_constructor")
         pass
 
     def test_getName(self):
         print("test_getName")
-        pass
+        self.assertEqual(self.test.name,"TestGraph")
 
     def test_setName(self):
         print("test_setName")
-        pass
+        testName = self.test.setName("DifferentName")
+        self.assertEqual(str(testName), "DifferentName")
 
     def test_isWeighted(self):
         print("test_isWeighted")
