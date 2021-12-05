@@ -156,7 +156,7 @@ class Graph:
     
     # getMatrix
     # Returns matrix for graph
-    def getMatrix(self, print):
+    def getAdjMatrix(self, print):
         newMatrix = self.adjMatrix
         if print == True:
             print(self.adjMatrix)
