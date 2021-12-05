@@ -47,6 +47,8 @@ class TestGraphQuestPackage(unittest.TestCase):
 
     def test_getNodeCount(self):
         print("test_getNodeCount")
+        # Node count for current graph should be 5
+        self.assertEqual(self.test.getNodeCount(), 5)
         pass
 
     def test_getEdgeCount(self):
