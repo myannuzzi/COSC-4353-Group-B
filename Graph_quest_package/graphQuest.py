@@ -1,7 +1,7 @@
 # Put all code for features and classes here
 # imports
 import numpy as np
-import file_to_mat
+# import file_to_mat
 import os
 import pandas as pd
 import networkx as nx
@@ -145,6 +145,11 @@ class Graph:
 	def getMatrix(self):
 		newMatrix = self.adjMatrix
 		return newMatrix
+
+    # getDirection
+    # Gets the direction of a directed edge between two nodes
+    # def getDirection(self, a, b):
+    #     pass
 
 	# # Output function
 	# # Create a csv file
