@@ -66,7 +66,6 @@ class TestGraphQuestPackage(unittest.TestCase):
                               [0, 1, 1, 0, 1],
                               [0, 1, 0, 1, 0]])
         self.assertTrue(np.array_equal(adjMatrix, self.test.getAdjMatrix(False)))
-        pass
 
     def test_getAdjList(self):
         print("test_getAdjList")
@@ -74,7 +73,10 @@ class TestGraphQuestPackage(unittest.TestCase):
 
     def test_getNodeList(self):
         print("test_getNodeList")
-        pass
+        # Node list should be 1 to 5
+        # Checking against numpy list
+        nodeList = np.arange(1,5)
+        self.assertTrue(np.array_equal((nodeList),self.test.getNodeList()))
 
     def test_getEdgeList(self):
         print("test_getEdgeList")
