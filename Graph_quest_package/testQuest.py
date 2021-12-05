@@ -190,8 +190,11 @@ class Graph:
         adjList = defaultdict(list)
         for i in range(self.getNodeCount):
             # for j in range 
-            print("Something")
-
+            print("Adding to node: " + i)
+            for j in range(self.getNodeCount):
+                print("Adding to list of node: " + j)
+                if self.adjMatrix[i][j] == 1 :
+                    adjList.append(j)
         return adjList
 
     # getAdjList
