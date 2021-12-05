@@ -5,6 +5,7 @@ setuptools.setup(
     version="0.0.1",
     author="Mike Yannuzzi, Cherish, Nithin",
     author_email="madnug35@gmail.com",
+    py_modules=["graphQuest"]
     description="Graph Quest is a graph manipulation and visualization tool",
     url="https://github.com/myannuzzi/COSC-4353-Group-B.git",
     classifiers=[
