@@ -26,7 +26,6 @@ class Graph:
         self.adjList = self.createAdjList(self, adjMatrix)
         # Create edge list 
 
-    
     # createNodeList
     # Creates the node list for the graph constructor
     def createNodeList(self, nodeCount):
@@ -203,6 +202,17 @@ class Graph:
         if print == True:
             print(self.adjList)
         return self.adjList
+
+    # isWeighted
+    # Returns if graph is weighted
+    def isWeighted(self):
+        return self.isWeighted
+
+    # isDirected
+    # Returns if graph is directed
+    def isDirected(self):
+        return self.isDirected
+
 
 #---------------------Pandas functions-----------------------
 
