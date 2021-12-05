@@ -59,6 +59,13 @@ class TestGraphQuestPackage(unittest.TestCase):
 
     def test_getAdjMatrix(self):
         print("test_getAdjMatrix")
+        # checking if two np matrices are the same
+        adjMatrix = np.array([[0, 1, 1, 0, 0],
+                              [1, 0, 1, 1, 1],
+                              [1, 1, 0, 1, 0],
+                              [0, 1, 1, 0, 1],
+                              [0, 1, 0, 1, 0]])
+        self.assertTrue(np.array_equal(adjMatrix, self.test.getAdjMatrix(False)))
         pass
 
     def test_getAdjList(self):
