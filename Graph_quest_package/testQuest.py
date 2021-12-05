@@ -170,6 +170,9 @@ class Graph:
     # Sets the edge direction between two nodes in a directed graph
     def setEdgeDirection(self, a, b):
         pass
-
+    
+    def getNodeList(self):
+        return self.nodeList
+        
 # Algorithm function sections
 
