@@ -11,7 +11,7 @@ from testQuest import Graph
 class TestGraphQuestPackage(unittest.TestCase):
     # Adding in setup and teardown to reduce code reusage
     def setUp(self):
-        print("setup")
+        # print("setup")
         adjMatrix = np.array([[0, 1, 1, 0, 0],
                               [1, 0, 1, 1, 1],
                               [1, 1, 0, 1, 0],
@@ -20,7 +20,7 @@ class TestGraphQuestPackage(unittest.TestCase):
         self.test = Graph("TestGraph", adjMatrix, False, False)
 
     def tearDown(self):
-        print("teardown")
+        # print("teardown")
         pass
 
     def test_constructor(self):
@@ -33,12 +33,12 @@ class TestGraphQuestPackage(unittest.TestCase):
 
     def test_setName(self):
         print("test_setName")
-        testName = self.test.setName("DifferentName")
-        self.assertEqual(str(testName), "DifferentName")
+        self.test.setName("DifferentName")
+        self.assertEqual(self.test.name, "DifferentName")
 
     def test_isWeighted(self):
         print("test_isWeighted")
-        pass
+        self.assertFalse(self.test.isWeighted())
 
     def test_isDirected(self):
         print("test_isDirected")
