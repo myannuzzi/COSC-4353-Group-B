@@ -6,6 +6,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import os
 import sys
+from collections import defaultdict
 
 # ------------------Graph Class-----------------------
 class Graph:
@@ -154,8 +155,10 @@ class Graph:
     
     # getMatrix
     # Returns matrix for graph
-    def getMatrix(self):
+    def getMatrix(self, print):
         newMatrix = self.adjMatrix
+        if print == True:
+            print(self.adjMatrix)
         return newMatrix
 
     # getEdgeDirection
@@ -178,6 +181,9 @@ class Graph:
     # createAdjList
     # Creates adjacency list from adjcency matrix
     def createAdjList(self):
+        adjList = defaultdict(list)
+        for i in range(self.getNodeCount):
+            for j in range
         pass
 
 # Algorithm function sections
