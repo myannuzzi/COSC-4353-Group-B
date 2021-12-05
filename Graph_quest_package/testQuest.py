@@ -254,4 +254,24 @@ class Graph:
 # print("The breadth first search result on the given number is: ")
 # print(bfs(gr, given_num))
 
-#-------------------------PD----------------------------
+#-------------------------PD-------------------------------------
+
+
+
+
+#-------------------------Minimum Spanning Tree------------------
+
+
+
+#-------------------------Cycle Detection------------------------
+
+
+#-------------------------Dijsktra's-----------------------------
+
+
+
+
+#-------------------------NetworkX Visualize---------------------
+# create's NetworkX object that works with Graph object
+def graphX(graph):
+    pass
