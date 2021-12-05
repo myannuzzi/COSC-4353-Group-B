@@ -88,7 +88,8 @@ class TestGraphQuestPackage(unittest.TestCase):
 
     def test_createNodeList(self):
         print("test_createNodeList")
-        pass
+        testList = self.test.createNodeList()
+        self.assertTrue(np.array_equal(testList, self.test.getNodeList()))
 
     def test_insertNode(self):
         print("test_insertNode")
