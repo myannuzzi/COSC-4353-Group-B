@@ -201,6 +201,8 @@ class Graph:
             print(self.adjList)
         return self.adjList
 
+#---------------------Pandas functions-----------------------
+
 
 # Algorithm function sections
 # # ------------------BFS-----------------------
@@ -318,13 +320,13 @@ def get_adj_mat(fileName, zero_indexed=False):
     return np.array(adjacency)
 
 
-# Weighted / Unweighted
-# Input :  CSV file consisting of adj matrix
-# Output : Numpy array of adj matrix
+# # Weighted / Unweighted
+# # Input :  CSV file consisting of adj matrix
+# # Output : Numpy array of adj matrix
 
-def csv_to_numpy_adjmat(fileName):
-    adj_mat = np.genfromtxt(fileName, delimiter=',')
-    return np.array(adj_mat, dtype=np.int)
+# def csv_to_numpy_adjmat(fileName):
+#     adj_mat = np.genfromtxt(fileName, delimiter=',')
+#     return np.array(adj_mat, dtype=np.int)
 
 
 # Weighted / Unweighted
