@@ -42,6 +42,7 @@ class TestGraphQuestPackage(unittest.TestCase):
 
     def test_isDirected(self):
         print("test_isDirected")
+        self.assertFalse(self.test.isDirected())
         pass
 
     def test_getNodeCount(self):
