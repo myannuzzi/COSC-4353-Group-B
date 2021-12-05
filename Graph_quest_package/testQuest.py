@@ -22,13 +22,13 @@ class Graph:
         self.isWeighted = type(isWeighted)
         self.isDirected = type(isDirected)
         # Create the node list
-        self.nodeList = self.createNodeList(self, self.nodeCount)
-        self.adjList = self.createAdjList(self, adjMatrix)
+        self.nodeList = self.createNodeList()
+        self.adjList = self.createAdjList()
         # Create edge list 
 
     # createNodeList
     # Creates the node list for the graph constructor
-    def createNodeList(self, nodeCount):
+    def createNodeList(self):
         nodeList = np.arange(1,self.nodeCount)
         return nodeList
 
@@ -187,13 +187,13 @@ class Graph:
     # Creates adjacency list from adjcency matrix
     def createAdjList(self):
         adjList = defaultdict(list)
-        for i in range(self.getNodeCount):
+        for i in range(self.getNodeCount()):
             # for j in range 
-            print("Adding to node: " + i)
-            for j in range(self.getNodeCount):
-                print("Adding to list of node: " + j)
+            # print("Adding to node: " + i)
+            for j in range(self.getNodeCount()):
+                # print("Adding to list of node: " + j)
                 if self.adjMatrix[i][j] == 1 :
-                    adjList.append(j)
+                    adjList[i].append(j)
         return adjList
 
     # getAdjList

@@ -15,8 +15,8 @@ adjMatrix = np.array([[0,1,1,0,0],
 # print("Pass...")
 test = Graph("graph1", adjMatrix, False, False)
 print(test)
-print("Node count is: " + str(test.nodeCount))
-print("Edge count is: " + str(test.edgeCount))
+# print("Node count is: " + str(test.nodeCount))
+# print("Edge count is: " + str(test.edgeCount))
 
 # Test weighted or directed
 if test.isWeighted() == True:
