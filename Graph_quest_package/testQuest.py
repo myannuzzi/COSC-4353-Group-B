@@ -183,8 +183,16 @@ class Graph:
     def createAdjList(self):
         adjList = defaultdict(list)
         for i in range(self.getNodeCount):
-            for j in range
+            for j in range 
         pass
+
+    # getAdjList
+    # Returns adjList for graph
+    def getAdjList(self, print):
+        if print == True:
+            print(self.adjList)
+        return self.adjList
+
 
 # Algorithm function sections
 # # ------------------BFS-----------------------
