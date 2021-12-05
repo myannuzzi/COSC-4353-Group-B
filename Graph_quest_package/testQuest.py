@@ -160,6 +160,15 @@ class Graph:
     # getEdgeDirection
     # Gets the direction of an edge in a directed graph
     def getEdgeDirection(self, a, b):
+        if self.isDirected == False:
+            print("Cannot use this function on an undirected graph")
+            return
+        else:
+            print("Add more here")
+    
+    # setEdgeDirection
+    # Sets the edge direction between two nodes in a directed graph
+    def setEdgeDirection(self, a, b):
         pass
 
 # Algorithm function sections
